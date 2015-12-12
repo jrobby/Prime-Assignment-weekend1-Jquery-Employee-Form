@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="jquery.min.js"></script>
+		<script type='text/javascript' src='script.js'></script>
+	</head>
+
+	<body>
+		<div class='container'>
+			<form id="employeeinfo">
+				<label for: "firstname">First name:</label>
+			  	<input type="text" name="firstname">
+
+			<br>
+				<label for:"lastname">Last name:</label>
+				<input type="text" name="lastname">
+
+			<br>
+				<label for:"employeeNumber">Employee ID Number:</label>
+			  	<input type="text" name="employeeNumber">
+
+			<br>
+				<label for:"jobTitle">Job Title:</label>
+				<input type="text" name="jobTitle">
+
+			<br>
+				<label for:"salary">Salary:</label>
+				<input type="text" name="salary">
+
+			<br>
+			  <input type='submit' value='Submit Employee'/>
+
+			</form>
+		</div>
+
+		<div id="container">
+		</div>
+	</body>
+</html>
+
+
+
+
+  <!-- Hey Thetas!
+
+For your weekend challenge, you will need to create an application that adds employee salaries so that a company knows how much they are spending each month in salary.
+
+The application should first have an input form that collects:
+The Employee's First and Last name
+The Employee's ID Number
+The Employee's Job Title
+The Employee's Salary (Yearly)
+
+The form should have a submit button that clears out the form and your logic should store that information. Then, that information should be appended to the DOM so that the user of the application can see the information they just entered.
+
+
+Finally, your logic should calculate all of the employee salaries and report back what the monthly cost of salaries is.
+
+Hard Mode
+Create a delete button that removes an employee from the form. Note that in hard mode, it need not remove that Employee's salary from the reported total. (Note, you will need to look up the '.remove()' jQuery function).
+
+Pro Mode
+Once the employee is deleted, also update the total spend on salaries to discount the removed employee's salary. This will require that the logic knows which element was removed. You will need to stretch yourself for this one. I also recommend that you look into jQuery's .data() function to help complete this. Note, you will need to do something both when the employee is added and when they are deleted to make your application 'smart'.
+
+Good Luck, have a great weekend!
+
