@@ -1,6 +1,7 @@
 var array = [];
 var annualSalaries = 0;
 
+
 $(document).ready(function(){
 	$("#employeeinfo").on('submit',function(event){
 		event.preventDefault();
@@ -11,35 +12,24 @@ $(document).ready(function(){
 			values[field.name] = field.value;
 		})
 
-		// $("button").click(function(){
-
-  //       $("#container").remove();
-  //   		});
-		
 		$("#employeeinfo").find("input[type=text]").val("");
 
-
 		annualSalaries+=Number(values.salary);
+
 		appendDom(values);
 
-
 		array.push(values);
-		console.log("array: " + array);
+		console.log(array);
 		
-	});
+    });
 
 });
-
-
-// $("button").click(function(){
-//         $("#container").remove();
-//     });
-
 
 
 function appendDom(object){
 	$("#container").append("<div></div>");
 	var $el = $("#container").children().last();
+	// $el.addClass(object.employeeNumber);
 
 	$el.append("<p>" + object.firstname + "</p>");
 	$el.append("<p>" + object.lastname + "</p>");
@@ -47,10 +37,14 @@ function appendDom(object){
 	$el.append("<p>" + object.jobTitle + "</p>");
 	$el.append("<p>" + object.salary + "</p>");
 	$el.append("<p>" + "Monthly cost of salaries: " + Math.round(annualSalaries/12) + "</p>");
-	
+	$el.append("<p>" + "<button class = 'button'>" +  "Remove " + object.firstname +  " " + 
+		object.lastname + "</button>" + "</p>")
 
-	// $("#container").append("<p>" + "<button>Remove " + object.firstname + "</button>" + "</p>")
- 
+	$('button').on('click', function() {
+    $(this).parent().parent().remove();
+});
+
+
 }
 
 
